@@ -33,7 +33,7 @@ export default {
       // 我们打开了 3 个参数，即采集音频，采集视频，采集屏幕共享。
       // 这个函数会返回一个列表，列表中每一项就是一个音视频轨对象
       const localTracks = await QNRTC.deviceManager.getLocalTracks({
-        audio: { enabled: true, tag: 'audio' },
+        audio: { enabled: false, tag: 'audio' },
         video: { enabled: true, tag: 'video' },
         screen: { enabled: true, tag: 'screen' }
       });
