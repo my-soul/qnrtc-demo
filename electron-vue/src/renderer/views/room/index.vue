@@ -8,7 +8,6 @@
 
 <script>
 import * as QNRTC from 'pili-rtc-web';
-import { getToken } from '../../common/api';
 
 export default {
   name: 'room',
@@ -22,9 +21,8 @@ export default {
       console.log(QNRTC);
       // 初始化一个房间 Session 对象
       const myRoom = new QNRTC.TrackModeSession();
-      // 这里替换成刚刚生成的 RoomToken
-      const token = await getToken('d8lk7l4ed', 'qwejjh88', 'admin');
-      await myRoom.joinRoomWithToken(token);
+      const { data } = await this.$http.post('/qnrtc/get_room_token', { roomName: 'test', userId: 'kun', permission: 'admin' });
+      await myRoom.joinRoomWithToken(data.roomToken);
       console.log('joinRoom success!');
 
       await this.publish(myRoom);

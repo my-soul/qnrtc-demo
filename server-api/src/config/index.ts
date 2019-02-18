@@ -8,12 +8,12 @@ interface IConfig {
   env: NODE_ENV;
   port: number;
   qiniu: {
-    ak: string,
-    sk: string,
+    ak: string;
+    sk: string;
     rtc: {
-      appId: string
-    }
-  }
+      appId: string;
+    };
+  };
 }
 
 let envConfig: any;

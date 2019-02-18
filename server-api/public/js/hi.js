@@ -1,1 +1,1 @@
-document.write('ni hao');
+document.write("'ni hao'");

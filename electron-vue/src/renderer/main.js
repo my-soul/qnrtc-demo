@@ -1,14 +1,13 @@
 import Vue from 'vue';
-import axios from 'axios';
-
-import db from '../shared/datastore';
-
+import request from './utils/plugins/request';
 import App from './App';
 import router from './router';
 import store from './store';
+import db from '../shared/datastore';
+
+Vue.use(request);
 
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'));
-Vue.http = Vue.prototype.$http = axios;
 Vue.prototype.$db = db;
 Vue.config.productionTip = false;
 
