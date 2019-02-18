@@ -17,9 +17,9 @@ async function main() {
     app.use(koaLogger());
   }
 
-  app.use(session(app.getKoaInstance()));
+  // app.use(session(app.getKoaInstance()));
 
-  app.use(appJwt());
+  // app.use(appJwt());
 
   app.use(errorHandle());
 

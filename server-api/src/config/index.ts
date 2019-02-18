@@ -7,6 +7,13 @@ import { NODE_ENV } from '../enums';
 interface IConfig {
   env: NODE_ENV;
   port: number;
+  qiniu: {
+    ak: string,
+    sk: string,
+    rtc: {
+      appId: string
+    }
+  }
 }
 
 let envConfig: any;
