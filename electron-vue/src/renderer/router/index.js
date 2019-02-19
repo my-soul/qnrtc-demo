@@ -11,9 +11,12 @@ export default new Router({
       component: require('@/views/home/index').default
     },
     {
-      path: '/room',
-      name: 'room',
-      component: require('@/views/room/index').default
+      path: '/create-room',
+      component: require('@/views/create-room/index').default
+    },
+    {
+      path: '/join-room',
+      component: require('@/views/join-room/index').default
     },
     {
       path: '*',

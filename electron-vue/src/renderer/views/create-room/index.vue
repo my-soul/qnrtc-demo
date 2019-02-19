@@ -1,7 +1,6 @@
 <template>
-  <div id="page-room">
-    <h1>pili-rtc-web-version: {{ v }}</h1>
-    <button @click="joinRoom">joinRoom</button>
+  <div id="page-create-room">
+    <button @click="createRoom">创建</button>
     <div id="localtracks" style="width: 640px;"></div>
   </div>
 </template>
@@ -10,20 +9,14 @@
 import * as QNRTC from 'pili-rtc-web';
 
 export default {
-  name: 'room',
-  data() {
-    return {
-      v: QNRTC.version
-    };
-  },
+  name: 'create-room',
   methods: {
-    async joinRoom() {
-      console.log(QNRTC);
+    async createRoom() {
       // 初始化一个房间 Session 对象
       const myRoom = new QNRTC.TrackModeSession();
       const { data } = await this.$http.post('/qnrtc/get_room_token', { roomName: 'test', userId: 'kun', permission: 'admin' });
       await myRoom.joinRoomWithToken(data.roomToken);
-      console.log('joinRoom success!');
+      console.log('createRoom success!');
 
       await this.publish(myRoom);
     },
@@ -31,7 +24,7 @@ export default {
       // 我们打开了 3 个参数，即采集音频，采集视频，采集屏幕共享。
       // 这个函数会返回一个列表，列表中每一项就是一个音视频轨对象
       const localTracks = await QNRTC.deviceManager.getLocalTracks({
-        audio: { enabled: false, tag: 'audio' },
+        audio: { enabled: true, tag: 'audio' },
         video: { enabled: true, tag: 'video' },
         screen: { enabled: true, tag: 'screen' }
       });

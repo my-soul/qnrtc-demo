@@ -3,7 +3,7 @@ import NProgress from 'nprogress'; // progress bar
 import 'nprogress/nprogress.css';
 import { Message } from 'element-ui';
 
-const baseURL = process.env.NODE_ENV === 'production' ? 'http://tx.shartem.com:3001' : 'http://localhost:3001';
+const baseURL = process.env.NODE_ENV === 'production' ? 'http://localhost:3001' : 'http://localhost:3001';
 
 NProgress.configure({ showSpinner: false }); // NProgress Configuration
 

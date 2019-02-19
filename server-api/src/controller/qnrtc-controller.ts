@@ -1,7 +1,7 @@
 import { Controller, Post, BodySchame, Body, ApiDescription } from 'souljs';
 import * as joi from 'joi';
 import { ResultUtils } from '../utils/result-utils';
-import * as QNRTCAPI from '../api/qnrtc';
+import * as QNRTCAPI from '../service/qnrtc';
 
 @ApiDescription('七牛接口')
 @Controller('/qnrtc')
