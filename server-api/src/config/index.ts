@@ -1,27 +1,11 @@
-import defaultConfig from './config.default';
-import devConfig from './config.dev';
+import { defaultConfig, IConfig } from './config.default';
 import testConfig from './config.test';
 import prodConfig from './config.prod';
 import { NODE_ENV } from '../enums';
 
-interface IConfig {
-  env: NODE_ENV;
-  port: number;
-  qiniu: {
-    ak: string;
-    sk: string;
-    rtc: {
-      appId: string;
-    };
-  };
-}
-
 let envConfig: any;
 const env = process.env.NODE_ENV;
 switch (env) {
-  case NODE_ENV.dev:
-    envConfig = devConfig;
-    break;
   case NODE_ENV.test:
     envConfig = testConfig;
     break;
