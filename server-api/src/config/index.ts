@@ -1,4 +1,4 @@
-import { defaultConfig, IConfig } from './config.default';
+import { defaultConfig } from './config.default';
 import testConfig from './config.test';
 import prodConfig from './config.prod';
 import { NODE_ENV } from '../enums';
@@ -13,6 +13,6 @@ switch (env) {
     envConfig = prodConfig;
 }
 
-const config: IConfig = Object.assign(defaultConfig, envConfig);
+Object.assign(defaultConfig, envConfig);
 
-export default config;
+export default defaultConfig;
