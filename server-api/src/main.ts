@@ -10,7 +10,8 @@ import { appJwt } from './middleware/app-jwt';
 async function main() {
   const app = await createApplication(__dirname, '/controller/*controller.ts', {
     logger: getLogger('app'),
-    hbs: { disableCache: config.env === NODE_ENV.dev },
+    hbs: false,
+    staticAssets: false
   });
 
   if (config.env === NODE_ENV.dev) {
