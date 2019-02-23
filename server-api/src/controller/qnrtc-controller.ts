@@ -1,5 +1,6 @@
-import { Controller, Post, BodySchame, Body, ApiDescription } from 'souljs';
+import { Controller, Post, BodySchame, Body, ApiDescription, Get, Ctx } from 'souljs';
 import * as joi from 'joi';
+import * as Koa from 'Koa';
 import { ResultUtils } from '../utils/result-utils';
 import * as QNRTCAPI from '../service/qnrtc';
 
