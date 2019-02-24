@@ -6,7 +6,7 @@ import * as QNRTCAPI from '../service/qnrtc';
 
 @ApiDescription('七牛接口')
 @Controller('/qnrtc')
-export default class qnrtc {
+export default class Qnrtc {
   @ApiDescription('获取roomToken')
   @Post('/get_room_token')
   @BodySchame(

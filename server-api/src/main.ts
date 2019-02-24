@@ -9,7 +9,7 @@ import { appJwt } from './middleware/app-jwt';
 
 async function main() {
   const app = await createApplication(__dirname, '/controller/*controller.ts', {
-    logger: getLogger('app')
+    logger: getLogger('app'),
   });
 
   if (config.env === NODE_ENV.dev) {
